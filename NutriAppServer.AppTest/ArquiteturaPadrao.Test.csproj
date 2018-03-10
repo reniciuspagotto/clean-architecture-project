@@ -7,8 +7,8 @@
     <ProjectGuid>{5231A967-7E19-4F5E-805C-69FC6D66A208}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NutriAppServer.AppTest</RootNamespace>
-    <AssemblyName>NutriAppServer.AppTest</AssemblyName>
+    <RootNamespace>ArquiteturaPadrao.Test</RootNamespace>
+    <AssemblyName>ArquiteturaPadrao.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

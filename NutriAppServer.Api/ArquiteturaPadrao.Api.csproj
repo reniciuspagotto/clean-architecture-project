@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NutriAppServer.Domain\NutriAppServer.Domain.csproj" />
-    <ProjectReference Include="..\NutriAppServer.Shared\NutriAppServer.Shared.csproj" />
+    <ProjectReference Include="..\NutriAppServer.Domain\ArquiteturaPadrao.Domain.csproj" />
+    <ProjectReference Include="..\NutriAppServer.Shared\ArquiteturaPadrao.Shared.csproj" />
   </ItemGroup>
 
 </Project>
