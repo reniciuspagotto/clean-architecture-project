@@ -4,8 +4,4 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\NutriAppServer.Shared\ArquiteturaPadrao.Shared.csproj" />
-  </ItemGroup>
-
 </Project>
