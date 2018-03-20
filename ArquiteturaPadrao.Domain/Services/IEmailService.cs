@@ -1,4 +1,4 @@
-﻿namespace NutriAppServer.Domain.Services
+﻿namespace ArquiteturaPadrao.Domain.Services
 {
     public interface IEmailService
     {

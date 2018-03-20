@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NutriAppServer.Domain.Entities
+namespace ArquiteturaPadrao.Domain.Entities
 {
     public class Customer
     {

@@ -1,7 +1,7 @@
 ﻿using Flunt.Notifications;
 using System;
 
-namespace NutriAppServer.Shared.Entity
+namespace ArquiteturaPadrao.Shared.Entity
 {
     public class Entity : Notifiable
     {

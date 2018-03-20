@@ -1,7 +1,7 @@
-﻿using NutriAppServer.Shared.Enum;
+﻿using ArquiteturaPadrao.Shared.Enum;
 using System;
 
-namespace NutriAppServer.Domain.Entities
+namespace ArquiteturaPadrao.Domain.Entities
 {
     public class Subscription
     {

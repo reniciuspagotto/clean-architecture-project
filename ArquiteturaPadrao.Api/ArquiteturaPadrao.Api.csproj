@@ -9,4 +9,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ArquiteturaPadrao.Domain\ArquiteturaPadrao.Domain.csproj" />
+    <ProjectReference Include="..\ArquiteturaPadrao.Shared\ArquiteturaPadrao.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace NutriAppServer.Api.DI
+namespace ArquiteturaPadrao.Api.DI
 {
     public static class DependencyInjection
     {

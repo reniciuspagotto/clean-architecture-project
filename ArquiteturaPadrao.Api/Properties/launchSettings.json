@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "NutriAppServer.Api": {
+    "ArquiteturaPadrao.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

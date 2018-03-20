@@ -1,6 +1,6 @@
-﻿using NutriAppServer.Shared.Enum;
+﻿using ArquiteturaPadrao.Shared.Enum;
 
-namespace NutriAppServer.Domain.Entities
+namespace ArquiteturaPadrao.Domain.Entities
 {
     public class Payment
     {

@@ -1,7 +1,7 @@
-﻿using NutriAppServer.Domain.Entities;
+﻿using ArquiteturaPadrao.Domain.Entities;
 using System.Collections.Generic;
 
-namespace NutriAppServer.Domain.Repositories
+namespace ArquiteturaPadrao.Domain.Repositories
 {
     public interface ICustomerRepository
     {

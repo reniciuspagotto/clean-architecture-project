@@ -1,6 +1,6 @@
-﻿using NutriAppServer.Shared.Response;
+﻿using ArquiteturaPadrao.Shared.Response;
 
-namespace NutriAppServer.Shared.Commands
+namespace ArquiteturaPadrao.Shared.Commands
 {
     public interface IHandler<T> where T : class
     {

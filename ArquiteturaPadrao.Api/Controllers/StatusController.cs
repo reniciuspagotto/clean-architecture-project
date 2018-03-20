@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace NutriAppServer.Api.Controllers
+namespace ArquiteturaPadrao.Api.Controllers
 {
     [Route("api/status")]
     public class StatusController : Controller

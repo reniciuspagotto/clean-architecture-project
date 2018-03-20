@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NutriAppServer.Shared.Response
+namespace ArquiteturaPadrao.Shared.Response
 {
     public class ResponseResult
     {

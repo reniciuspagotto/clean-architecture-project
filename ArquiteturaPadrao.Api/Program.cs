@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace NutriAppServer.Api
+namespace ArquiteturaPadrao.Api
 {
     public class Program
     {

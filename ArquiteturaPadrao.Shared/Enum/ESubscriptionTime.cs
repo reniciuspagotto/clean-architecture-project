@@ -1,10 +1,10 @@
-﻿namespace NutriAppServer.Shared.Enum
+﻿namespace ArquiteturaPadrao.Shared.Enum
 {
     public enum ESubscriptionTime
     {
-        UmMes = 1,
-        TresMeses = 2,
-        SeisMeses = 3,
-        DozeMeses = 4
+        OneMonth = 1,
+        ThreeMonth = 2,
+        SixMonth = 3,
+        TwelveMonth = 4
     }
 }

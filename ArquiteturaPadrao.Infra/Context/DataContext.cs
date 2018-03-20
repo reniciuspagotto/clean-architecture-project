@@ -1,4 +1,4 @@
-﻿namespace NutriAppServer.Infra.Context
+﻿namespace ArquiteturaPadrao.Infra.Context
 {
     public class DataContext
     {

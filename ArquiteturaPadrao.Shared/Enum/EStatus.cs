@@ -1,4 +1,4 @@
-﻿namespace NutriAppServer.Shared.Enum
+﻿namespace ArquiteturaPadrao.Shared.Enum
 {
     public enum EStatus
     {

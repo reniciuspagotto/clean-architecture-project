@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using NutriAppServer.Api.DI;
+using ArquiteturaPadrao.Api.DI;
 
-namespace NutriAppServer.Api
+namespace ArquiteturaPadrao.Api
 {
     public class Startup
     {
