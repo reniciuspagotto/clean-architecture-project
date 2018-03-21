@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ArquiteturaPadrao.Domain\ArquiteturaPadrao.Domain.csproj" />
+    <ProjectReference Include="..\ArquiteturaPadrao.Infra\ArquiteturaPadrao.Infra.csproj" />
     <ProjectReference Include="..\ArquiteturaPadrao.Shared\ArquiteturaPadrao.Shared.csproj" />
   </ItemGroup>
 
