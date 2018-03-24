@@ -26,6 +26,8 @@ namespace ArquiteturaPadrao.Api
             services.AddMvc();
 
             DependencyInjection.Resolve(services);
+
+            services.AddResponseCompression();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -33,6 +35,7 @@ namespace ArquiteturaPadrao.Api
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
+            app.UseResponseCompression();
             app.UseMvc();
         }
     }
