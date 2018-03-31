@@ -18,7 +18,9 @@ namespace ArquiteturaPadrao.Domain.Handlers
 
         public object Handle(CreateCustomerCommand command)
         {
-            var customer = new Customer();// DEVE ADICIONAR INICIALIZAÇÃODO OBJETO NO CONSTRUTOR
+            var user = new User(command.Username, command.Password);
+            var customer = new Customer(command.FirstName, command.LastName, command.Birthdate,
+                command.PhoneNumber, command.Email, user);
 
             //TODO - IMPLEMENTAR TODO O FLUXO DA ENTIDADE ANTES DE SALVAR
 
@@ -27,11 +29,9 @@ namespace ArquiteturaPadrao.Domain.Handlers
 
         public object Handle(EditCustomerCommand command)
         {
-            var customer = new Customer(); // DEVE ADICIONAR INICIALIZAÇÃODO OBJETO NO CONSTRUTOR
-
             //TODO - IMPLEMENTAR TODO O FLUXO DA ENTIDADE ANTES DE EDITAR
 
-            return _customerRepository.Save(customer);
+            return null;
         }
     }
 }

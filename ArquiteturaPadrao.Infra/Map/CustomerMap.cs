@@ -9,11 +9,15 @@ namespace ArquiteturaPadrao.Infra.Map
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.ToTable("Customer"); //DEFINE O NOME DA TABELA
-            builder.HasKey(x => x.Id); //DEFINE A CHAVE PRIMÁRIA DO BANCO
+            builder.HasKey(p => p.Id); //DEFINE A CHAVE PRIMÁRIA DO BANCO
 
-            builder.Ignore(x => x.Notifications);
-            builder.Ignore(x => x.Valid);
-            builder.Ignore(x => x.Invalid);
+            builder.Property(p => p.FirstName).IsRequired().HasMaxLength(60);
+            builder.Property(p => p.LastName).IsRequired().HasMaxLength(60);
+            builder.Property(p => p.Birthdate).IsRequired();
+            builder.Property(p => p.PhoneNumber).HasMaxLength(20);
+            builder.Property(p => p.Email).IsRequired().HasMaxLength(200);
+
+            builder.HasOne(p => p.User);
         }
     }
 }

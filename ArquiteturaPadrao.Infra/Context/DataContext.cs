@@ -1,6 +1,5 @@
 ﻿using ArquiteturaPadrao.Domain.Entities;
 using ArquiteturaPadrao.Infra.Map;
-using Flunt.Notifications;
 using Microsoft.EntityFrameworkCore;
 
 namespace ArquiteturaPadrao.Infra.Context
@@ -15,6 +14,7 @@ namespace ArquiteturaPadrao.Infra.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CustomerMap());
+            modelBuilder.ApplyConfiguration(new UserMap());
         }
     }
 }

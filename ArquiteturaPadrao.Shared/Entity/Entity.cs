@@ -1,9 +1,8 @@
-﻿using Flunt.Notifications;
-using System;
+﻿using System;
 
 namespace ArquiteturaPadrao.Shared.Entity
 {
-    public class Entity : Notifiable
+    public class Entity
     {
         public Entity()
         {
