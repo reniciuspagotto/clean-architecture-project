@@ -6,7 +6,8 @@ using ArquiteturaPadrao.Infra.UnitOfWork;
 
 namespace ArquiteturaPadrao.Api.Controllers
 {
-    [Route("api/customers")]
+    [ApiVersion("1")]
+    [Route("api/v{version:apiVersion}/customers")]
     public class CustomerController : BaseController
     {
         private readonly CustomerHandler _handler;
@@ -25,7 +26,7 @@ namespace ArquiteturaPadrao.Api.Controllers
         }
 
         [HttpPut]
-        public ResponseResult Edit(CreateCustomerCommand command)
+        public ResponseResult Edit(EditCustomerCommand command)
         {
             var response = _handler.Handle(command);
             Commit();

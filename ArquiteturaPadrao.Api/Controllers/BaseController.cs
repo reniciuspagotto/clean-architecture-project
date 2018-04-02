@@ -12,14 +12,14 @@ namespace ArquiteturaPadrao.Api.Controllers
             _uow = uow;
         }
 
-        public void Commit()
+        protected void Commit()
         {
             _uow.Commit();
         }
 
-        public void CommitAsync()
-        {
-            _uow.CommitAsync();
-        }
+        //public void CommitAsync()
+        //{
+        //    _uow.CommitAsync();
+        //}
     }
 }

@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ArquiteturaPadrao.Api.Controllers
 {
-    [Route("api/status")]
+    [ApiVersion("1")]
+    [Route("api/v{version:apiVersion}/status")]
     public class StatusController : Controller
     {
         [HttpGet]
@@ -12,6 +13,7 @@ namespace ArquiteturaPadrao.Api.Controllers
             var data = new ResponseResult();
             data.Success = true;
             data.Message.Add("A aplicação está online");
+            data.Message.Add("Versão 1.0");
 
             return data;
         }
