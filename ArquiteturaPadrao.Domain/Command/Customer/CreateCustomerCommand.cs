@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ArquiteturaPadrao.Domain.Command
+namespace ArquiteturaPadrao.Domain.Command.Customer
 {
     public class CreateCustomerCommand
     {

@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ArquiteturaPadrao.Shared.Response;
-using ArquiteturaPadrao.Domain.Command;
 using ArquiteturaPadrao.Domain.Handlers;
 using ArquiteturaPadrao.Infra.UnitOfWork;
+using ArquiteturaPadrao.Domain.Command.Customer;
 
 namespace ArquiteturaPadrao.Api.Controllers
 {
-    [ApiVersion("1")]
+    [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/customers")]
     public class CustomerController : BaseController
     {

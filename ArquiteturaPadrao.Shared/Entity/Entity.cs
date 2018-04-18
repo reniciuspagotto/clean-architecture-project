@@ -4,11 +4,16 @@ namespace ArquiteturaPadrao.Shared.Entity
 {
     public class Entity
     {
-        public Entity()
+        public Guid Id { get; private set; }
+
+        public void CreateId()
         {
             Id = Guid.NewGuid();
         }
 
-        public Guid Id { get; private set; }
+        public void SetId(Guid id)
+        {
+            Id = id;
+        }
     }
 }

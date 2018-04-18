@@ -1,4 +1,4 @@
-﻿using ArquiteturaPadrao.Domain.Command;
+﻿using ArquiteturaPadrao.Domain.Command.Customer;
 using ArquiteturaPadrao.Domain.Entities;
 using ArquiteturaPadrao.Domain.Repositories;
 using ArquiteturaPadrao.Shared.Commands;
@@ -21,6 +21,7 @@ namespace ArquiteturaPadrao.Domain.Handlers
             var user = new User(command.Username, command.Password);
             var customer = new Customer(command.FirstName, command.LastName, command.Birthdate,
                 command.PhoneNumber, command.Email, user);
+            customer.CreateId();
 
             //TODO - IMPLEMENTAR TODO O FLUXO DA ENTIDADE ANTES DE SALVAR
 

@@ -1,11 +1,18 @@
 ﻿using ArquiteturaPadrao.Api.DI;
 using ArquiteturaPadrao.Infra.Context;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
+using System.Text;
 
 namespace ArquiteturaPadrao.Api
 {
@@ -24,7 +31,16 @@ namespace ArquiteturaPadrao.Api
 
             services.AddEntityFrameworkSqlServer().AddDbContext<DataContext>(options => options.UseSqlServer(connectionString));
 
-            services.AddMvc();
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .Build();
+
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
+            services.AddCors();
             services.AddApiVersioning();
 
             DependencyInjection.Resolve(services);
@@ -42,6 +58,26 @@ namespace ArquiteturaPadrao.Api
                     Contact = new Contact() { Name = "Arquitetura Padrão", Email = "arquitetura@teste.com", Url = "www.arquitetura.com" }
                 });
             });
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidIssuer = Configuration["Authentication:Issuer"],
+
+                        ValidateAudience = true,
+                        ValidAudience = Configuration["Authentication:Audience"],
+
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Authentication:SecretKey"])),
+
+                        RequireExpirationTime = true,
+                        ValidateLifetime = true,
+                        ClockSkew = TimeSpan.Zero
+                    };
+                });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -50,12 +86,19 @@ namespace ArquiteturaPadrao.Api
                 app.UseDeveloperExceptionPage();
 
             app.UseResponseCompression();
-            app.UseMvc();
+            app.UseAuthentication();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
             });
+            app.UseCors(x =>
+            {
+                x.AllowAnyHeader();
+                x.AllowAnyMethod();
+                x.AllowAnyOrigin();
+            });
+            app.UseMvc();
         }
     }
 }
