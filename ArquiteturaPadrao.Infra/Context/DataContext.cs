@@ -7,6 +7,7 @@ namespace ArquiteturaPadrao.Infra.Context
     public class DataContext : DbContext
     {
         public DbSet<Customer> Customer { get; set; }
+        public DbSet<User> User { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         { }

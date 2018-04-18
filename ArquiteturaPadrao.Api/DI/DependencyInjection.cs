@@ -15,6 +15,7 @@ namespace ArquiteturaPadrao.Api.DI
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<CustomerHandler, CustomerHandler>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
         }
     }
 }
