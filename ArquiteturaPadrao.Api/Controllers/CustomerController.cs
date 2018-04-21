@@ -18,19 +18,15 @@ namespace ArquiteturaPadrao.Api.Controllers
         }
 
         [HttpPost]
-        public ResponseResult Create([FromBody] CreateCustomerCommand command)
+        public IActionResult Create([FromBody] CreateCustomerCommand command)
         {
-            var response = _handler.Handle(command);
-            Commit();
-            return new ResponseResult();
+            return GetResponse(() => _handler.Handle(command));
         }
 
         [HttpPut]
-        public ResponseResult Edit(EditCustomerCommand command)
+        public IActionResult Edit(EditCustomerCommand command)
         {
-            var response = _handler.Handle(command);
-            Commit();
-            return new ResponseResult();
+            return GetResponse(() => _handler.Handle(command));
         }
 
         [HttpGet]

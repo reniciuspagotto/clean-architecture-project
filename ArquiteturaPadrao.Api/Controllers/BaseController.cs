@@ -1,5 +1,7 @@
 ﻿using ArquiteturaPadrao.Infra.UnitOfWork;
+using ArquiteturaPadrao.Shared.Response;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ArquiteturaPadrao.Api.Controllers
 {
@@ -12,14 +14,35 @@ namespace ArquiteturaPadrao.Api.Controllers
             _uow = uow;
         }
 
-        protected void Commit()
+        protected IActionResult GetResponse<T>(Func<T> action)
         {
-            _uow.Commit();
+            try
+            {
+                var dataReturn = action();
+                _uow.Commit();
+                return GetOkRequestJson(dataReturn);
+            }
+            catch (Exception ex)
+            {
+                return GetBadRequestJson(ex.Message);
+            }
         }
 
-        //public void CommitAsync()
-        //{
-        //    _uow.CommitAsync();
-        //}
+        private BadRequestObjectResult GetBadRequestJson(string message)
+        {
+            return BadRequest(new ResponseResult
+            {
+                Success = false
+            });
+        }
+
+        private OkObjectResult GetOkRequestJson<T>(T entity)
+        {
+            return Ok(new ResponseResult
+            {
+                Success = true,
+                Data = entity
+            });
+        }
     }
 }
